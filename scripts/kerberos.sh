@@ -1,4 +1,4 @@
-sudo apt -y install samba smbclient winbind krb5-config
+apt -y install samba smbclient winbind krb5-config
 #hacer una copia de los archivos
 mv /etc/samba/smb.conf /etc/samba/smb.conf.copy
 #Nuevo fichero de configuracion de samba
