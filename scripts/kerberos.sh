@@ -1,6 +1,6 @@
 sudo apt -y install samba smbclient winbind krb5-config
 #hacer una copia de los archivos
-mv /etc/samba/samba.conf /etc/samba/samba.conf.copy
+mv /etc/samba/smb.conf /etc/samba/smb.conf.copy
 #Nuevo fichero de configuracion de samba
 cd /etc/samba
 samba-tool domain provision
@@ -12,3 +12,4 @@ systemctl disable smbd nmbd winbind system-resolved
 systemctl unmask samba-ad-dc
 systemctl enable samba-ad-dc
 systemctl restart samba-ad-dc
+systemctl status samba-ad-dc
