@@ -1,7 +1,5 @@
 #!bin/bash
 clear
-apt -y install net-tools
-clear
 #============Functions===============
 ifaced () {
 echo "This file describes the network interfaces available on your system" > /etc/network/interfaces
@@ -36,7 +34,7 @@ echo "  dns-nameservers $ip" >> /etc/network/interfaces
 echo "¿Cuantas tarjetas de red tienes?"
 read num
 clear
-if [ $num = 1]
+if [ $num = 1 ]
 then
 echo "¿Que interfaz de red deseas modificar?"
 read red
@@ -93,4 +91,4 @@ else
 
 fi
 clear
-ifconfig | grep -A 1 $red
+ip a
