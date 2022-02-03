@@ -1,0 +1,25 @@
+cuser(){
+clear
+echo "Nombre de Usuario:"
+read name
+if [ -z "$name" ]
+then
+echo "No puedes dejar el campo vacio"
+sleep 1
+cuser
+else
+echo "Contraseña(Mín 8 digitos, numeros, letras y simbolos):"
+read -s pwd 
+echo "Repite la contraseña:"
+read -s pwd1
+if [ $pwd = $pwd1 ]
+then 
+samba-tool user create $name $pwd
+else
+echo "No coinciden las contraseñas"
+sleep 0.5
+cuser
+fi
+fi
+}
+cuser
